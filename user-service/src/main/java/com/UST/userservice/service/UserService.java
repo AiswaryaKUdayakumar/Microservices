@@ -19,7 +19,7 @@ public class UserService {
         return repo.save(user);
     }
 
-    public ResponseTemplateVO getUserwithDepartment(Long userId) {
+    public ResponseTemplateVO getUserWithDepartment(long userId) {
         ResponseTemplateVO vo = new ResponseTemplateVO();
         User user = repo.findByUserId(userId);
         Department department =restTemplate.getForObject("http://DEPARTMENT-SERVICE/department/"+user.getDepartmentId(),Department.class);
